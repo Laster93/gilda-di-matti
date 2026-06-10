@@ -1,0 +1,24 @@
+export default function GazzettinoPage() {
+  return (
+    <div className="max-w-3xl mx-auto px-6 py-16 flex flex-col gap-10">
+
+      <div className="flex flex-col gap-3">
+        <h1 className="font-cinzel text-4xl font-bold text-amber-400 tracking-widest">
+          📰 Gazzettino
+        </h1>
+        <p className="font-crimson text-lg text-stone-400">
+          Notizie dal regno, bacheche e side quest disponibili.
+        </p>
+        <div className="w-16 h-px bg-amber-700" />
+      </div>
+
+      <div className="flex flex-col items-center justify-center py-20 gap-4 border border-stone-800 rounded-lg bg-stone-900">
+        <span className="text-5xl">📜</span>
+        <p className="font-crimson text-xl text-stone-400 italic text-center">
+          Al momento non ci sono notizie, a presto!
+        </p>
+      </div>
+
+    </div>
+  );
+}

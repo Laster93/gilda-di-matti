@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-cinzel: var(--font-cinzel);
+  --font-crimson: var(--font-crimson);
+}
+
+.font-cinzel {
+  font-family: var(--font-cinzel);
+}
+
+.font-crimson {
+  font-family: var(--font-crimson);
+}
