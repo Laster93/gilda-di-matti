@@ -4,7 +4,7 @@ import IconaMercante from "@/components/IconaMercante";
 
 const links = [
   { href: "/sessioni", label: "📜 Cronache", icona: false },
-  { href: "/membri", label: "⚔️ Compagni", icona: false },
+  { href: "/membri", label: "⚔️ Membri", icona: false },
   { href: "/gazzettino", label: "📰 Gazzettino", icona: false },
   { href: "/planimetria", label: "🗺️ Sede", icona: false },
   { href: "/documenti", label: "📄 Archivio", icona: false },

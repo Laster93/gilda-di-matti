@@ -12,7 +12,7 @@ const sezioni = [
   {
     href: "/membri",
     emoji: "⚔️",
-    titolo: "Compagni",
+    titolo: "Membri",
     descrizione: "I valorosi (e improbabili) membri della gilda.",
   },
   {
