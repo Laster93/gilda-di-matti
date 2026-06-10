@@ -22,7 +22,9 @@ Fonti vicine alla vicenda, che hanno chiesto di rimanere anonime per via del fum
 
 Al momento della chiusura del presente articolo, il quarto distretto risulta «prevalentemente carbonizzato», secondo la valutazione tecnica del Capo delle Guardie **Borgo Cincinnatus**, raggiunto dalla nostra redazione mentre versava acqua in una direzione sbagliata.
 
-Il Governatore Bertox Noxis ha assicurato che «saranno prese tutte le misure necessarie» e che «il responsabile sarà trovato». Non ha specificato cosa intendesse con «trovato» né se lo intendesse in senso fisico o metaforico.
+Il Governatore **Bertox Noxis** ha assicurato che «saranno prese tutte le misure necessarie» e che «il responsabile sarà trovato». Non ha specificato cosa intendesse con «trovato» né se lo intendesse in senso fisico o metaforico.
+
+Si stima un numero di vittime di circa 340, ma i numeri aumentano di minuto in minuto. Nella stessa notte si sono verificati altri eventi anomali lungo le strade della zona: alcuni cittadini sono stati trovati dilaniati, divisi a metà, con il sangue completamente prosciugato.
 
 I residenti del quarto distretto sono invitati a evacuare ordinatamente, possibilmente prima che sia troppo tardi. Quelli del quinto distretto sono invitati a stare pronti.
 
