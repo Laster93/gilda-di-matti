@@ -13,7 +13,7 @@ In una dichiarazione letta alle nove del mattino dal portavoce ufficiale del Gov
 
 Alla domanda della nostra redazione su cosa stesse esattamente bruciando, il portavoce ha risposto: *«Cose. Cose di legno, principalmente.»*
 
-Fonti vicine alla vicenda, che hanno chiesto di rimanere anonime per via del fumo negli occhi, ci hanno riferito che l'incendio sarebbe partito dalla zona del mercato coperto intorno alla mezzanotte. Le teorie in circolazione sono molteplici:
+Fonti vicine alla vicenda, che hanno chiesto di rimanere anonime per via del fumo negli occhi, ci hanno riferito che l'incendio sarebbe partito dalla zona del mercato coperto intorno alla mezzanotte. Numerosi testimoni parlano di una **violenta esplosione sotterranea** che ha preceduto le fiamme: dall'esplosione sarebbero schizzati in aria torrenti di **liquido nero altamente infiammabile**, che ricadendo sui tetti e sulle facciate delle abitazioni avrebbe immediatamente innescato roghi di insolita violenza, difficilissimi da domare con l'acqua. Le autorità non hanno commentato l'origine del liquido né l'eventuale presenza di strutture sotterranee nella zona. Le teorie in circolazione sono molteplici:
 
 - Una lucerna lasciata accesa da un oste «tanto cosa vuoi che succeda»
 - Un esperimento alchemico andato «meglio del previsto»
