@@ -5,13 +5,13 @@ import IconaMercante from "@/components/IconaMercante";
 const sezioni = [
   {
     href: "/sessioni",
-    emoji: "📜",
+    emoji: "⚔️",
     titolo: "Cronache",
     descrizione: "I riassunti delle nostre avventure, sessione per sessione.",
   },
   {
     href: "/membri",
-    emoji: "⚔️",
+    emoji: "🧙",
     titolo: "Membri",
     descrizione: "I valorosi (e improbabili) membri della gilda.",
   },
@@ -29,7 +29,7 @@ const sezioni = [
   },
   {
     href: "/documenti",
-    emoji: "📄",
+    emoji: "📜",
     titolo: "Archivio",
     descrizione: "Regole, schede, mappe e documenti per i giocatori.",
   },
