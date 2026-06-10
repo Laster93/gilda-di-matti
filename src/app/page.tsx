@@ -47,7 +47,7 @@ export default function Home() {
 
       {/* Hero */}
       <section className="text-center flex flex-col items-center gap-6">
-        <div className="text-6xl">⚔️</div>
+        <div className="text-6xl">🌟</div>
         <h1 className="font-cinzel text-5xl font-bold text-amber-400 tracking-widest leading-tight">
           {GILDA.nome}
         </h1>
