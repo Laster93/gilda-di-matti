@@ -1,3 +1,5 @@
+import MercanteShop from "@/components/MercanteShop";
+
 export default function MercantePage() {
   return (
     <div className="max-w-3xl mx-auto px-6 py-16 flex flex-col gap-10">
@@ -12,12 +14,7 @@ export default function MercantePage() {
         <div className="w-16 h-px bg-amber-700" />
       </div>
 
-      <div className="flex flex-col items-center justify-center py-20 gap-4 border border-stone-800 rounded-lg bg-stone-900">
-        <span className="text-5xl">💰</span>
-        <p className="font-crimson text-xl text-stone-400 italic text-center">
-          Il mercante arriverà presto.
-        </p>
-      </div>
+      <MercanteShop />
 
     </div>
   );
