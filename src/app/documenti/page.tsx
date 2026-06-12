@@ -69,7 +69,7 @@ export default function DocumentiPage() {
           📄 Archivio
         </h1>
         <p className="font-crimson text-lg text-stone-400">
-          Regole, classi e schede per i giocatori della Gilda di matti.
+          Regole, classi e schede per i giocatori della Gilda dei matti.
         </p>
         <div className="w-16 h-px bg-amber-700" />
       </div>

@@ -30,7 +30,7 @@ export default function PlanimetriaPage() {
           🗺️ La Sede
         </h1>
         <p className="font-crimson text-lg text-stone-400">
-          La Locanda Lockheart — base operativa della Gilda di matti.
+          La Locanda Lockheart — base operativa della Gilda dei matti.
         </p>
         <div className="w-16 h-px bg-amber-700" />
       </div>

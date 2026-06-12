@@ -18,7 +18,7 @@ export default function MembriPage() {
           ⚔️ Compagni
         </h1>
         <p className="font-crimson text-lg text-stone-400">
-          I valorosi (e improbabili) membri della Gilda di matti.
+          I valorosi (e improbabili) membri della Gilda dei matti.
         </p>
         <div className="w-16 h-px bg-amber-700" />
       </div>

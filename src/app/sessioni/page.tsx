@@ -11,7 +11,7 @@ export default function SessioniPage() {
           📜 Cronache
         </h1>
         <p className="font-crimson text-lg text-stone-400">
-          Le gesta della Gilda di matti, atto per atto.
+          Le gesta della Gilda dei matti, atto per atto.
         </p>
         <div className="w-16 h-px bg-amber-700" />
       </div>
