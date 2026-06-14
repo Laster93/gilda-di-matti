@@ -7,7 +7,7 @@ ruolo: "Membro Gilda"
 allineamento: ""
 divinita: ""
 stato: "Attivo"
-monete: ""
+monete: "36 mo"
 giocatore: "Lollo"
 immagine: "/membri/dureks.jpeg"
 ordine: 3

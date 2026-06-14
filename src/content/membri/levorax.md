@@ -7,7 +7,7 @@ ruolo: "Membro Gilda"
 allineamento: ""
 divinita: ""
 stato: "Attivo"
-monete: ""
+monete: "80 mo"
 giocatore: "Matti"
 immagine: "/membri/levorax.jpg"
 ordine: 9
