@@ -32,6 +32,13 @@ const categorie = [
       { nome: "Scheda Personaggio 2024", file: "D&D - 2024 Scheda Personaggio.pdf" },
     ],
   },
+  {
+    titolo: "🎲 Strumenti",
+    documenti: [
+      { nome: "Incantesimi Revisionati (Excel)", file: "Incantesimi_revisionati.xlsx" },
+      { nome: "Grimorio del Drago (App Android)", file: "grimorio_del_drago.apk" },
+    ],
+  },
 ];
 
 function formatSize(bytes: number) {
@@ -58,6 +65,8 @@ const dimensioni: Record<string, number> = {
   "Stregone.pdf": 8350164,
   "Talenti.pdf": 9336327,
   "Warlock.pdf": 7931967,
+  "Incantesimi_revisionati.xlsx": 43137,
+  "grimorio_del_drago.apk": 50730022,
 };
 
 export default function DocumentiPage() {
