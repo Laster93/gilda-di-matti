@@ -1,7 +1,7 @@
 import { getMembro, getMembri } from "@/lib/membri";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import MembroFoto from "@/components/MembroFoto";
 
 export async function generateStaticParams() {
   return getMembri().map((m) => ({ slug: m.slug }));
@@ -45,13 +45,13 @@ export default async function MembroPage({
 
       {/* Header */}
       <div className="flex gap-8 items-start">
-        <div className="relative w-36 h-36 shrink-0 rounded-lg overflow-hidden border border-stone-700 bg-stone-800">
-          {m.immagine ? (
-            <Image src={m.immagine} alt={m.nome} fill className="object-cover object-top" />
-          ) : (
-            <div className="w-full h-full flex items-center justify-center text-5xl text-stone-600">⚔️</div>
-          )}
-        </div>
+        {m.immagine ? (
+          <MembroFoto src={m.immagine} nome={m.nome} />
+        ) : (
+          <div className="relative w-36 h-36 shrink-0 rounded-lg overflow-hidden border border-stone-700 bg-stone-800 flex items-center justify-center text-5xl text-stone-600">
+            ⚔️
+          </div>
+        )}
         <div className="flex flex-col gap-2">
           <h1 className="font-cinzel text-3xl font-bold text-amber-400 leading-tight">{m.nome}</h1>
           <p className="font-crimson text-xl text-stone-300">
