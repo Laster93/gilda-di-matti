@@ -7,10 +7,10 @@ ruolo: "Membro Gilda"
 allineamento: ""
 divinita: ""
 stato: "Attivo"
-monete: "36 mo"
+monete: "36"
 giocatore: "Lollo"
 immagine: "/membri/dureks.jpeg"
 ordine: 3
 ---
 
-
+“E se provassi qualcosa di diverso?”

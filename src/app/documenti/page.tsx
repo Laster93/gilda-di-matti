@@ -3,7 +3,6 @@ const categorie = [
     titolo: "📚 Manuali & Regole",
     documenti: [
       { nome: "Manuale Base D&D 5e (ITA)", file: "Manuale Base - SDR v5.2.1 - ITA.pdf" },
-      { nome: "Player's Handbook 2024 (ITA)", file: "PHB-2024_IT_v1.pdf" },
       { nome: "Incantesimi 2024", file: "Incantesimi 2024.pdf" },
       { nome: "Talenti", file: "Talenti.pdf" },
       { nome: "Background e Specie", file: "Background e Speci.pdf" },
@@ -35,8 +34,7 @@ const categorie = [
   {
     titolo: "🎲 Strumenti",
     documenti: [
-      { nome: "Incantesimi Revisionati (Excel)", file: "Incantesimi_revisionati.xlsx" },
-      { nome: "Grimorio del Drago (App Android)", file: "grimorio_del_drago.apk" },
+      { nome: "Grimorio del Drago (App Android)", file: "GrimorioDelDrago.apk" },
     ],
   },
 ];
@@ -60,13 +58,11 @@ const dimensioni: Record<string, number> = {
   "Manuale Base - SDR v5.2.1 - ITA.pdf": 9305130,
   "Monaco.pdf": 5250130,
   "Paladino.pdf": 6379002,
-  "PHB-2024_IT_v1.pdf": 265703,
   "Ranger.pdf": 5898437,
   "Stregone.pdf": 8350164,
   "Talenti.pdf": 9336327,
   "Warlock.pdf": 7931967,
-  "Incantesimi_revisionati.xlsx": 43137,
-  "grimorio_del_drago.apk": 50730022,
+  "GrimorioDelDrago.apk": 50730102,
 };
 
 export default function DocumentiPage() {
