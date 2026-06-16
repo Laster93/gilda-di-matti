@@ -13,4 +13,4 @@ immagine: "/membri/dureks.jpeg"
 ordine: 3
 ---
 
-“E se provassi qualcosa di diverso?”
+
