@@ -1,5 +1,5 @@
 ---
-titolo: "Scoop al Puledro Spennato: il Figlio dell'Oste è una Pozza di Muco Corrosivo"
+titolo: "Scoop al Puledro Spennato: l'incredibile scoperta!"
 data: "19 Giugno 198 s.c.r."
 categoria: "Notizia"
 autore: "Ser Vola Lontano, inviato d'assalto (librato tra i cieli oscuri)"
