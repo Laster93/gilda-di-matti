@@ -25,7 +25,7 @@ export default function SessioniPage() {
           >
             <div className="flex items-center gap-3">
               <span className="font-cinzel text-xs text-amber-600 tracking-widest uppercase">
-                Atto {s.atto}
+                {s.etichetta}
               </span>
               {s.data && (
                 <span className="font-crimson text-sm text-stone-500">{s.data}</span>

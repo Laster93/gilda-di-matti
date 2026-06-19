@@ -16,6 +16,11 @@ export default async function SessionePage({
   const sessione = getSessione(slug);
   if (!sessione) notFound();
 
+  const tutte = getSessioni();
+  const idx = tutte.findIndex((s) => s.slug === slug);
+  const precedente = idx > 0 ? tutte[idx - 1] : null;
+  const successiva = idx >= 0 && idx < tutte.length - 1 ? tutte[idx + 1] : null;
+
   return (
     <div className="max-w-3xl mx-auto px-6 py-16 flex flex-col gap-8">
 
@@ -30,7 +35,7 @@ export default async function SessionePage({
       {/* Intestazione */}
       <div className="flex flex-col gap-3">
         <span className="font-cinzel text-xs text-amber-600 tracking-widest uppercase">
-          Atto {sessione.atto}{sessione.data ? ` · ${sessione.data}` : ""}
+          {sessione.etichetta}{sessione.data ? ` · ${sessione.data}` : ""}
         </span>
         <h1 className="font-cinzel text-4xl font-bold text-amber-400 leading-tight">
           {sessione.titolo}
@@ -48,20 +53,22 @@ export default async function SessionePage({
 
       {/* Navigazione tra atti */}
       <div className="flex justify-between pt-6 border-t border-stone-800">
-        {sessione.atto > 1 ? (
+        {precedente ? (
           <Link
-            href={`/sessioni/atto-${sessione.atto - 1}`}
+            href={`/sessioni/${precedente.slug}`}
             className="font-crimson text-stone-400 hover:text-amber-400 transition-colors"
           >
-            ← Atto {sessione.atto - 1}
+            ← {precedente.etichetta}
           </Link>
         ) : <span />}
-        <Link
-          href={`/sessioni/atto-${sessione.atto + 1}`}
-          className="font-crimson text-stone-400 hover:text-amber-400 transition-colors"
-        >
-          Atto {sessione.atto + 1} →
-        </Link>
+        {successiva ? (
+          <Link
+            href={`/sessioni/${successiva.slug}`}
+            className="font-crimson text-stone-400 hover:text-amber-400 transition-colors"
+          >
+            {successiva.etichetta} →
+          </Link>
+        ) : <span />}
       </div>
 
     </div>
