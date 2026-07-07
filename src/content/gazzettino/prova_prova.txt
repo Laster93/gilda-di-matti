@@ -1,0 +1,10 @@
+---
+titolo: Sto facendo una prova
+data: 07 Luglio 198 s.c.r.
+categoria: "Notizia"
+autore: Ser Enzino Iacchetti
+---
+
+Qui sotto puoi iniziare a scrivere liberamente il testo del tuo articolo. 
+Puoi usare il grassetto racchiudendo le parole tra due asterischi (es: **testo in grassetto**).
+Per fare un elenco puntato, ti basta usare i trattini o gli asterischi all'inizio della riga.
