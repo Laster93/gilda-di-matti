@@ -42,6 +42,11 @@ Dopo circa **1 minuto** il contenuto è online.
 
 ## Regole d'oro
 - Il file deve stare nella cartella giusta e avere i campi in alto (tra i `---`) compilati.
+- **Nome del file** = indirizzo web della pagina. Usa SOLO lettere semplici `a-z`
+  minuscole, numeri e trattini. Niente **accenti**, **apostrofi** o **spazi**,
+  altrimenti la pagina dà errore 404 quando ci entri.
+  (Es: `l-arrotino-e-arrivato.md`, non `l'arrotino-è-arrivato.md`.)
+  Il titolo/nome tra i `---` invece può avere accenti e maiuscole: è solo testo mostrato.
 - Non modificare i file che iniziano con `_` (sono i modelli, non vengono pubblicati).
 - Formattazione del testo (uguale in tutte le sezioni):
   - `**grassetto**`  →  **grassetto**
