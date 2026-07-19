@@ -31,7 +31,7 @@ function parse(file: string): Sessione {
 }
 
 export function getSessioni(): Sessione[] {
-  const files = fs.readdirSync(dir).filter((f) => f.endsWith(".md"));
+  const files = fs.readdirSync(dir).filter((f) => f.endsWith(".md") && !f.startsWith("_"));
   return files.map(parse).sort((a, b) => a.atto - b.atto);
 }
 

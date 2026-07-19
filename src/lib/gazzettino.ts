@@ -14,7 +14,7 @@ export type Articolo = {
 };
 
 export function getArticoli(): Articolo[] {
-  const files = fs.readdirSync(dir).filter((f) => f.endsWith(".md"));
+  const files = fs.readdirSync(dir).filter((f) => f.endsWith(".md") && !f.startsWith("_"));
   return files
     .map((file) => {
       const raw = fs.readFileSync(path.join(dir, file), "utf-8");

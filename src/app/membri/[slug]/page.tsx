@@ -2,6 +2,7 @@ import { getMembro, getMembri } from "@/lib/membri";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import MembroFoto from "@/components/MembroFoto";
+import Markdown from "@/components/Markdown";
 
 export async function generateStaticParams() {
   return getMembri().map((m) => ({ slug: m.slug }));
@@ -80,7 +81,7 @@ export default async function MembroPage({
       {m.bio && (
         <div className="flex flex-col gap-3">
           <h2 className="font-cinzel text-lg font-bold text-amber-600 tracking-widest uppercase">Biografia</h2>
-          <p className="font-crimson text-xl text-stone-300 leading-relaxed whitespace-pre-wrap">{m.bio}</p>
+          <Markdown size="text-xl">{m.bio}</Markdown>
         </div>
       )}
 

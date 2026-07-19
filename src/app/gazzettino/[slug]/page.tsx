@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getArticoli, getArticolo } from "@/lib/gazzettino";
-import ReactMarkdown from "react-markdown";
+import Markdown from "@/components/Markdown";
 
 export async function generateStaticParams() {
   return getArticoli().map((a) => ({ slug: a.slug }));
@@ -43,18 +43,8 @@ export default async function ArticoloPage({ params }: { params: Promise<{ slug:
         <div className="w-full h-px bg-amber-900" />
       </div>
 
-      <article className="font-crimson text-lg text-stone-300 leading-relaxed flex flex-col gap-4 prose-invert">
-        <ReactMarkdown
-          components={{
-            p: ({ children }) => <p className="font-crimson text-lg text-stone-300 leading-relaxed">{children}</p>,
-            strong: ({ children }) => <strong className="text-amber-300 font-bold">{children}</strong>,
-            em: ({ children }) => <em className="text-stone-400 italic">{children}</em>,
-            ul: ({ children }) => <ul className="list-disc list-inside flex flex-col gap-1 text-stone-300">{children}</ul>,
-            li: ({ children }) => <li className="font-crimson text-lg">{children}</li>,
-          }}
-        >
-          {articolo.contenuto}
-        </ReactMarkdown>
+      <article>
+        <Markdown size="text-lg">{articolo.contenuto}</Markdown>
       </article>
 
     </div>

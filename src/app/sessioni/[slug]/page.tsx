@@ -1,5 +1,6 @@
 import { getSessione, getSessioni } from "@/lib/sessioni";
 import MasterNotes from "@/components/MasterNotes";
+import Markdown from "@/components/Markdown";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -44,9 +45,7 @@ export default async function SessionePage({
       </div>
 
       {/* Testo pubblico */}
-      <div className="font-crimson text-xl text-stone-300 leading-relaxed">
-        {sessione.contenuto}
-      </div>
+      <Markdown size="text-xl">{sessione.contenuto}</Markdown>
 
       {/* Note master protette da password */}
       <MasterNotes note={sessione.notemaster} />
