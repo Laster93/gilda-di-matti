@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { GILDA } from "@/config";
+import { GILDA, MERCANTE } from "@/config";
 import IconaMercante from "@/components/IconaMercante";
 
 const sezioni = [
@@ -35,9 +35,11 @@ const sezioni = [
   },
   {
     href: "/mercante",
-    emoji: "💰",
+    emoji: MERCANTE.chiuso ? "🏖️" : "💰",
     titolo: "Mercante",
-    descrizione: "Oggetti, pozioni e rarità in vendita al mercato della gilda.",
+    descrizione: MERCANTE.chiuso
+      ? `Chiuso per ferie, riapriamo a ${MERCANTE.riapertura}!`
+      : "Oggetti, pozioni e rarità in vendita al mercato della gilda.",
   },
 ];
 
