@@ -1,71 +1,76 @@
-const categorie = [
-  {
-    titolo: "📚 Manuali & Regole",
-    documenti: [
-      { nome: "Manuale Base D&D 5e (ITA)", file: "Manuale Base - SDR v5.2.1 - ITA.pdf" },
-      { nome: "Incantesimi 2024", file: "Incantesimi 2024.pdf" },
-      { nome: "Talenti", file: "Talenti.pdf" },
-      { nome: "Background e Specie", file: "Background e Speci.pdf" },
-    ],
-  },
-  {
-    titolo: "🧙 Classi",
-    documenti: [
-      { nome: "Barbaro", file: "Barbaro.pdf" },
-      { nome: "Bardo", file: "Bardo.pdf" },
-      { nome: "Chierico", file: "Chierico.pdf" },
-      { nome: "Druido", file: "Druido.pdf" },
-      { nome: "Guerriero", file: "Guerriero.pdf" },
-      { nome: "Ladro", file: "Ladro.pdf" },
-      { nome: "Mago", file: "Mago.pdf" },
-      { nome: "Monaco", file: "Monaco.pdf" },
-      { nome: "Paladino", file: "Paladino.pdf" },
-      { nome: "Ranger", file: "Ranger.pdf" },
-      { nome: "Stregone", file: "Stregone.pdf" },
-      { nome: "Warlock", file: "Warlock.pdf" },
-    ],
-  },
-  {
-    titolo: "📄 Schede",
-    documenti: [
-      { nome: "Scheda Personaggio 2024", file: "D&D - 2024 Scheda Personaggio.pdf" },
-    ],
-  },
-  {
-    titolo: "🎲 Strumenti",
-    documenti: [
-      { nome: "Grimorio del Drago (App Android)", file: "GrimorioDelDrago.apk" },
-    ],
-  },
-];
+import fs from "fs";
+import path from "path";
+
+const DIR = path.join(process.cwd(), "public/documenti");
+
+// Titolo mostrato per ogni sottocartella di public/documenti.
+// Se crei una cartella nuova non elencata qui, compare lo stesso:
+// verra' usato il nome della cartella come titolo.
+const titoli: Record<string, string> = {
+  manuali: "📚 Manuali & Regole",
+  classi: "🧙 Classi",
+  schede: "📄 Schede",
+  strumenti: "🎲 Strumenti",
+};
+
+// Ordine in cui mostrare le categorie; quelle non elencate vanno in fondo.
+const ordine = ["manuali", "classi", "schede", "strumenti"];
 
 function formatSize(bytes: number) {
   if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(0)} KB`;
   return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
 }
 
-const dimensioni: Record<string, number> = {
-  "Background e Speci.pdf": 12239529,
-  "Barbaro.pdf": 6534300,
-  "Bardo.pdf": 6534300,
-  "Chierico.pdf": 5230599,
-  "D&D - 2024 Scheda Personaggio.pdf": 12084648,
-  "Druido.pdf": 7609723,
-  "Guerriero.pdf": 6752031,
-  "Incantesimi 2024.pdf": 73339960,
-  "Ladro.pdf": 6289153,
-  "Mago.pdf": 7542992,
-  "Manuale Base - SDR v5.2.1 - ITA.pdf": 9305130,
-  "Monaco.pdf": 5250130,
-  "Paladino.pdf": 6379002,
-  "Ranger.pdf": 5898437,
-  "Stregone.pdf": 8350164,
-  "Talenti.pdf": 9336327,
-  "Warlock.pdf": 7931967,
-  "GrimorioDelDrago.apk": 50730102,
-};
+type Doc = { nome: string; href: string; size: number };
+type Categoria = { cartella: string; titolo: string; documenti: Doc[] };
+
+function leggiDocumenti(cartella: string): Doc[] {
+  const full = cartella ? path.join(DIR, cartella) : DIR;
+  return fs
+    .readdirSync(full, { withFileTypes: true })
+    .filter((f) => f.isFile() && !f.name.startsWith(".") && !f.name.startsWith("_"))
+    .map((f) => ({
+      // il nome mostrato e' il nome del file senza estensione
+      nome: f.name.replace(/\.[^.]+$/, ""),
+      href: cartella
+        ? `/documenti/${encodeURIComponent(cartella)}/${encodeURIComponent(f.name)}`
+        : `/documenti/${encodeURIComponent(f.name)}`,
+      size: fs.statSync(path.join(full, f.name)).size,
+    }))
+    .sort((a, b) => a.nome.localeCompare(b.nome, "it"));
+}
+
+function leggiCategorie(): Categoria[] {
+  if (!fs.existsSync(DIR)) return [];
+
+  const categorie: Categoria[] = fs
+    .readdirSync(DIR, { withFileTypes: true })
+    .filter((e) => e.isDirectory() && !e.name.startsWith("_"))
+    .map((e) => ({
+      cartella: e.name,
+      titolo: titoli[e.name] ?? `📁 ${e.name.charAt(0).toUpperCase()}${e.name.slice(1)}`,
+      documenti: leggiDocumenti(e.name),
+    }))
+    .filter((c) => c.documenti.length > 0)
+    .sort((a, b) => {
+      const ia = ordine.indexOf(a.cartella);
+      const ib = ordine.indexOf(b.cartella);
+      return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+    });
+
+  // Documenti lasciati sciolti in public/documenti (fuori dalle sottocartelle):
+  // li mostro comunque in fondo, cosi' non "spariscono" se sbagli cartella.
+  const sciolti = leggiDocumenti("");
+  if (sciolti.length > 0) {
+    categorie.push({ cartella: "", titolo: "📁 Altri documenti", documenti: sciolti });
+  }
+
+  return categorie;
+}
 
 export default function DocumentiPage() {
+  const categorie = leggiCategorie();
+
   return (
     <div className="max-w-3xl mx-auto px-6 py-16 flex flex-col gap-10">
 
@@ -87,8 +92,8 @@ export default function DocumentiPage() {
           <div className="flex flex-col divide-y divide-stone-800 border border-stone-700 rounded-lg overflow-hidden">
             {cat.documenti.map((doc) => (
               <a
-                key={doc.file}
-                href={`/documenti/${doc.file}`}
+                key={doc.href}
+                href={doc.href}
                 download
                 className="flex items-center justify-between px-5 py-3 bg-stone-900 hover:bg-stone-800 transition-colors group"
               >
@@ -100,7 +105,7 @@ export default function DocumentiPage() {
                 </div>
                 <div className="flex items-center gap-3 shrink-0">
                   <span className="font-crimson text-sm text-stone-500">
-                    {formatSize(dimensioni[doc.file] ?? 0)}
+                    {formatSize(doc.size)}
                   </span>
                   <span className="font-crimson text-xs text-amber-700 group-hover:text-amber-500 transition-colors border border-amber-900 group-hover:border-amber-700 rounded px-2 py-0.5">
                     Scarica

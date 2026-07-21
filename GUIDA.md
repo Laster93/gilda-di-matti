@@ -53,5 +53,27 @@ Dopo circa **1 minuto** il contenuto è online.
   - `*corsivo*`  →  *corsivo*
   - righe che iniziano con `-` → elenco puntato
   - lascia una **riga vuota** tra un paragrafo e l'altro
-- Le altre sezioni (Archivio, Mercante, Sede) non si aggiornano con questo metodo:
-  servono modifiche al codice, chiedi quando ti serve.
+- Mercante e Sede non si aggiornano con questo metodo: servono modifiche al codice,
+  chiedi quando ti serve.
+
+---
+
+## Archivio (documenti PDF) — funziona da solo
+
+Trascina il PDF nella sottocartella giusta dentro `public/documenti/` e fai `pubblica.bat`:
+
+| Sottocartella | Sezione nell'Archivio |
+|---|---|
+| `public/documenti/manuali/` | 📚 Manuali & Regole |
+| `public/documenti/classi/` | 🧙 Classi |
+| `public/documenti/schede/` | 📄 Schede |
+| `public/documenti/strumenti/` | 🎲 Strumenti |
+
+- Il **nome del file** è il nome mostrato sul sito (`Talenti.pdf` → "Talenti").
+- Qui **puoi** usare accenti, spazi, `&` e parentesi: `Furtività 5.5 2024.pdf` va benissimo.
+- La **dimensione** viene calcolata da sola.
+- Per **togliere** un documento: cancella il file e ripubblica.
+- Per una **categoria nuova**: crea una nuova sottocartella e pubblica.
+- ⚠️ GitHub rifiuta i file oltre i **100 MB**.
+
+Istruzioni complete anche in `public/documenti/_LEGGIMI.txt`.

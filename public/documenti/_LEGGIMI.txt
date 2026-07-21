@@ -1,0 +1,49 @@
+COME AGGIUNGERE UN DOCUMENTO ALL'ARCHIVIO
+==========================================
+
+1. Trascina il PDF (o l'APK) dentro la sottocartella giusta:
+
+      manuali\     ->  compare sotto  "Manuali & Regole"
+      classi\      ->  compare sotto  "Classi"
+      schede\      ->  compare sotto  "Schede"
+      strumenti\   ->  compare sotto  "Strumenti"
+
+2. Doppio click su  pubblica.bat  (nella cartella principale del sito).
+
+3. Dopo circa 1 minuto il documento e' online nella pagina Archivio.
+
+
+IL NOME DEL FILE E' IL NOME MOSTRATO SUL SITO
+----------------------------------------------
+Il file  "Talenti.pdf"  compare come  "Talenti".
+Vuoi cambiare come si chiama sul sito? Rinomina il file e ripubblica.
+
+Nei documenti PUOI usare accenti, spazi, & e parentesi:
+  "Furtività 5.5 2024.pdf"  ->  Furtività 5.5 2024          OK
+  "Manuale Base D&D 5e (ITA).pdf"                            OK
+
+(Attenzione: questa liberta' vale SOLO per i documenti dell'Archivio.
+ Per gli articoli, le cronache e i personaggi il nome del file deve
+ restare semplice: solo lettere a-z minuscole, numeri e trattini.)
+
+La DIMENSIONE del file viene calcolata da sola: non devi scriverla.
+
+
+PER TOGLIERE UN DOCUMENTO
+--------------------------
+Cancella il file dalla sottocartella e fai  pubblica.bat.
+
+
+PER CREARE UNA CATEGORIA NUOVA
+-------------------------------
+Crea una nuova sottocartella qui dentro (es:  mappe\ ), mettici i file
+e pubblica: comparira' una nuova sezione nell'Archivio con quel nome.
+Se vuoi anche l'icona giusta accanto al titolo, chiedimelo.
+
+
+LIMITE IMPORTANTE
+------------------
+GitHub rifiuta i file sopra i 100 MB: se un PDF e' piu' pesante,
+la pubblicazione fallisce. In quel caso va compresso prima.
+
+I file che iniziano con  _  (come questo) non compaiono sul sito.
