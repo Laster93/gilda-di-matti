@@ -1,9 +1,9 @@
 ---
 nome: "Solanum"
-classe: "Da definire"
+classe: "Monaco"
 livello: 3
-razza: "Da definire"
-ruolo: "Da definire"
+razza: "Tiefling"
+ruolo: "Membro Gilda"
 allineamento: ""
 divinita: ""
 stato: "Attivo"

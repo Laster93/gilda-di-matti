@@ -1,9 +1,9 @@
 ---
 nome: "Ciolone"
-classe: "Da definire"
+classe: "Paladino"
 livello: 3
-razza: "Da definire"
-ruolo: "Da definire"
+razza: "Goliath"
+ruolo: "Membro Gilda"
 allineamento: ""
 divinita: ""
 stato: "Attivo"
