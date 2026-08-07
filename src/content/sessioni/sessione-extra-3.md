@@ -5,7 +5,7 @@ etichetta: "Sessione Extra 3"
 data: "23 Luglio 198"
 ---
 
-Dopo le disavventure dell'asta di Blackrock, siete tornati sulla nave per fare il punto della situazione. È lì che **Ajani** e il mago **Lombrosco** hanno finalmente svelato la verità sulla reliquia che avevate recuperato: si tratta del **Cuore di Aaron**, l'ingrediente attorno a cui ruota un'oscura cerimonia nota come **Rituale del Cuore**, capace di scatenare conseguenze terribili.
+Dopo le disavventure dell'asta di Blackrock, siete tornati sulla nave per fare il punto della situazione. È lì che **Ajani** e il mago **Lombrosco** hanno finalmente svelato la verità sulla reliquia che avevate recuperato: si tratta del **Cuore di Aaron**, l'ingrediente attorno a cui ruota un'oscura cerimonia nota come **Rituale del Cuore di Aaron**, capace di scatenare conseguenze terribili.
 
 Ajani vi ha spiegato di aver dato la caccia al cuore proprio per impedire quel rituale. In città, intanto, un numero crescente di **bambini** sta scomparendo: il timore è che vengano usati come combustibile per la cerimonia.
 
