@@ -1,6 +1,9 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { sezione } from "@/config";
+
+const SEZ = sezione("/planimetria");
 
 const viste = [
   {
@@ -27,7 +30,7 @@ export default function PlanimetriaPage() {
       {/* Intestazione */}
       <div className="flex flex-col gap-3">
         <h1 className="font-cinzel text-4xl font-bold text-amber-400 tracking-widest">
-          🗺️ La Sede
+          {SEZ.icona} {SEZ.titolo}
         </h1>
         <p className="font-crimson text-lg text-stone-400">
           La Locanda Lockheart — base operativa della Gilda dei matti.

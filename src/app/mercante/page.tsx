@@ -1,5 +1,7 @@
 import MercanteShop from "@/components/MercanteShop";
-import { MERCANTE } from "@/config";
+import { MERCANTE, sezione } from "@/config";
+
+const SEZ = sezione("/mercante");
 
 export default function MercantePage() {
   // Bottega chiusa: si mostra solo l'avviso, la merce resta nascosta.
@@ -26,10 +28,10 @@ export default function MercantePage() {
 
       <div className="flex flex-col gap-3">
         <h1 className="font-cinzel text-4xl font-bold text-amber-400 tracking-widest">
-          💰 Mercante
+          {SEZ.icona} {SEZ.titolo}
         </h1>
         <p className="font-crimson text-lg text-stone-400">
-          Oggetti, pozioni e rarità in vendita al mercato della gilda.
+          {SEZ.descrizione}
         </p>
         <div className="w-16 h-px bg-amber-700" />
       </div>

@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { getArticoli } from "@/lib/gazzettino";
+import { sezione } from "@/config";
+
+const SEZ = sezione("/gazzettino");
 
 const categoriaColori: Record<string, string> = {
   "Notizia": "text-red-400 border-red-800",
@@ -14,10 +17,10 @@ export default function GazzettinoPage() {
 
       <div className="flex flex-col gap-3">
         <h1 className="font-cinzel text-4xl font-bold text-amber-400 tracking-widest">
-          📰 La Gazzetta Ladra
+          {SEZ.icona} {SEZ.titolo}
         </h1>
         <p className="font-crimson text-lg text-stone-400 italic">
-          di notizie!
+          La Gazzetta Ladra, di notizie!
         </p>
         <div className="w-16 h-px bg-amber-700" />
       </div>

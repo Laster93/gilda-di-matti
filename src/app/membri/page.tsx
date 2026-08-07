@@ -1,6 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getMembri } from "@/lib/membri";
+import { sezione } from "@/config";
+
+const SEZ = sezione("/membri");
 
 const statoColore: Record<string, string> = {
   Attivo: "text-emerald-400",
@@ -15,7 +18,7 @@ export default function MembriPage() {
     <div className="max-w-5xl mx-auto px-6 py-16 flex flex-col gap-10">
       <div className="flex flex-col gap-3">
         <h1 className="font-cinzel text-4xl font-bold text-amber-400 tracking-widest">
-          ⚔️ Compagni
+          {SEZ.icona} {SEZ.titolo}
         </h1>
         <p className="font-crimson text-lg text-stone-400">
           I valorosi (e improbabili) membri della Gilda dei matti.

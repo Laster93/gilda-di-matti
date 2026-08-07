@@ -1,47 +1,17 @@
 import Link from "next/link";
-import { GILDA, MERCANTE } from "@/config";
-import IconaMercante from "@/components/IconaMercante";
+import { GILDA, MERCANTE, SEZIONI } from "@/config";
 
-const sezioni = [
-  {
-    href: "/sessioni",
-    emoji: "⚔️",
-    titolo: "Cronache",
-    descrizione: "I riassunti delle nostre avventure, sessione per sessione.",
-  },
-  {
-    href: "/membri",
-    emoji: "🧙",
-    titolo: "Membri",
-    descrizione: "I valorosi (e improbabili) membri della gilda.",
-  },
-  {
-    href: "/gazzettino",
-    emoji: "📰",
-    titolo: "Gazzettino",
-    descrizione: "Notizie dal regno, bacheche e side quest disponibili.",
-  },
-  {
-    href: "/planimetria",
-    emoji: "🗺️",
-    titolo: "Sede",
-    descrizione: "La planimetria della nostra gloriosa sede.",
-  },
-  {
-    href: "/documenti",
-    emoji: "📜",
-    titolo: "Archivio",
-    descrizione: "Regole, schede, mappe e documenti per i giocatori.",
-  },
-  {
-    href: "/mercante",
-    emoji: MERCANTE.chiuso ? "🏖️" : "💰",
-    titolo: "Mercante",
-    descrizione: MERCANTE.chiuso
-      ? `Chiuso per ferie, riapriamo a ${MERCANTE.riapertura}!`
-      : "Oggetti, pozioni e rarità in vendita al mercato della gilda.",
-  },
-];
+// Titoli e icone arrivano da SEZIONI in config.ts: il Mercante e' l'unica
+// eccezione, perche' quando e' chiuso mostra l'avviso delle ferie.
+const sezioni = SEZIONI.map((s) =>
+  s.href === "/mercante" && MERCANTE.chiuso
+    ? {
+        ...s,
+        emoji: "🏖️",
+        descrizione: `Chiuso per ferie, riapriamo a ${MERCANTE.riapertura}!`,
+      }
+    : { ...s, emoji: s.icona },
+);
 
 export default function Home() {
   return (

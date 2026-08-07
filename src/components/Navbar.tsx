@@ -1,15 +1,5 @@
 import Link from "next/link";
-import { GILDA } from "@/config";
-import IconaMercante from "@/components/IconaMercante";
-
-const links = [
-  { href: "/sessioni", label: "⚔️ Cronache", icona: false },
-  { href: "/membri", label: "🧙 Membri", icona: false },
-  { href: "/gazzettino", label: "📰 Gazzettino", icona: false },
-  { href: "/planimetria", label: "🗺️ Sede", icona: false },
-  { href: "/documenti", label: "📜 Archivio", icona: false },
-  { href: "/mercante", label: "💰 Mercante", icona: false },
-];
+import { GILDA, SEZIONI } from "@/config";
 
 export default function Navbar() {
   return (
@@ -19,14 +9,13 @@ export default function Navbar() {
           {GILDA.nome}
         </Link>
         <nav className="flex flex-wrap justify-center gap-1 sm:ml-auto">
-          {links.map((l) => (
+          {SEZIONI.map((s) => (
             <Link
-              key={l.href}
-              href={l.href}
+              key={s.href}
+              href={s.href}
               className="font-crimson text-base px-3 py-1 rounded text-stone-300 hover:text-amber-400 hover:bg-stone-800 transition-colors flex items-center gap-1"
             >
-              {l.icona ? <IconaMercante size={18} /> : null}
-              {l.label}
+              {s.icona} {s.titolo}
             </Link>
           ))}
         </nav>

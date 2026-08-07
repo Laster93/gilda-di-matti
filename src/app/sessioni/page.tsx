@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { getSessioni } from "@/lib/sessioni";
+import { sezione } from "@/config";
+
+const SEZ = sezione("/sessioni");
 
 export default function SessioniPage() {
   const sessioni = getSessioni();
@@ -8,7 +11,7 @@ export default function SessioniPage() {
     <div className="max-w-3xl mx-auto px-6 py-16 flex flex-col gap-10">
       <div className="flex flex-col gap-3">
         <h1 className="font-cinzel text-4xl font-bold text-amber-400 tracking-widest">
-          📜 Cronache
+          {SEZ.icona} {SEZ.titolo}
         </h1>
         <p className="font-crimson text-lg text-stone-400">
           Le gesta della Gilda dei matti, atto per atto.

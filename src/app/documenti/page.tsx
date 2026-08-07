@@ -1,6 +1,8 @@
 import fs from "fs";
 import path from "path";
+import { sezione } from "@/config";
 
+const SEZ = sezione("/documenti");
 const DIR = path.join(process.cwd(), "public/documenti");
 
 // Titolo mostrato per ogni sottocartella di public/documenti.
@@ -76,7 +78,7 @@ export default function DocumentiPage() {
 
       <div className="flex flex-col gap-3">
         <h1 className="font-cinzel text-4xl font-bold text-amber-400 tracking-widest">
-          📄 Archivio
+          {SEZ.icona} {SEZ.titolo}
         </h1>
         <p className="font-crimson text-lg text-stone-400">
           Regole, classi e schede per i giocatori della Gilda dei matti.
