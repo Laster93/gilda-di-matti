@@ -44,7 +44,21 @@ export function getMembri(): Membro[] {
         bio: content.trim(),
       };
     })
-    .sort((a, b) => a.ordine - b.ordine);
+    .sort((a, b) => a.nome.localeCompare(b.nome, "it"));
+}
+
+// Un personaggio e' un NPC quando nella sua scheda il campo
+// "giocatore" vale NPC; tutti gli altri sono personaggi giocanti.
+export function isNPC(m: Membro): boolean {
+  return m.giocatore.trim().toUpperCase() === "NPC";
+}
+
+export function getGiocatori(): Membro[] {
+  return getMembri().filter((m) => !isNPC(m));
+}
+
+export function getNPC(): Membro[] {
+  return getMembri().filter(isNPC);
 }
 
 export function getMembro(slug: string): Membro | null {

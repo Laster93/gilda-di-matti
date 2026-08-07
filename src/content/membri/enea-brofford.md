@@ -1,7 +1,7 @@
 ---
 nome: "Enea Brofford"
 classe: "Guerriero"
-livello: 5
+livello: 6
 razza: "Umano"
 ruolo: "Membro Gilda"
 allineamento: ""

@@ -1,7 +1,7 @@
 ---
 nome: "Gabbro"
 classe: "Ranger"
-livello: 5
+livello: 6
 razza: "Bullywug"
 ruolo: "Membro Gilda"
 allineamento: "Neutrale Buono"

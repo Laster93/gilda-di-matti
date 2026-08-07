@@ -1,7 +1,7 @@
 ---
 nome: "Breena"
 classe: "Mago"
-livello: 5
+livello: 6
 razza: "Gnomo"
 ruolo: "Membro Gilda"
 allineamento: ""

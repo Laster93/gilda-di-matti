@@ -1,7 +1,7 @@
 ---
-nome: "Giuseppe"
+nome: "Solanum"
 classe: "Da definire"
-livello: 0
+livello: 3
 razza: "Da definire"
 ruolo: "Da definire"
 allineamento: ""
@@ -9,8 +9,8 @@ divinita: ""
 stato: "Attivo"
 monete: ""
 giocatore: ""
-immagine: "/membri/giuseppe.jpeg"
-ordine: 15
+immagine: "/membri/dalila.jpeg"
+ordine: 14
 ---
 
 I dettagli su questo personaggio arriveranno presto.
