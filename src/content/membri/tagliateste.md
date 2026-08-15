@@ -9,7 +9,7 @@ divinita: ""
 stato: "Nuovo"
 monete: ""
 giocatore: "Rey"
-immagine: ""
+immagine: "/membri/tagliateste.jpeg"
 ordine: 99
 ---
 
