@@ -12,7 +12,7 @@ export const SEZIONI = [
   { href: "/sessioni",    icona: "⚔️", titolo: "Cronache",   descrizione: "I riassunti delle nostre avventure, sessione per sessione." },
   { href: "/membri",      icona: "🧙", titolo: "Membri",     descrizione: "I valorosi (e improbabili) membri della gilda." },
   { href: "/gazzettino",  icona: "📰", titolo: "Gazzettino", descrizione: "Notizie dal regno, bacheche e side quest disponibili." },
-  { href: "/planimetria", icona: "🗺️", titolo: "Sede",       descrizione: "La planimetria della nostra gloriosa sede." },
+  { href: "/planimetria", icona: "🗺️", titolo: "Gilda",      descrizione: "I tesori della gilda e le planimetrie della nostra sede." },
   { href: "/documenti",   icona: "📜", titolo: "Archivio",   descrizione: "Regole, schede, mappe e documenti per i giocatori." },
   { href: "/mercante",    icona: "💰", titolo: "Mercante",   descrizione: "Oggetti, pozioni e rarità in vendita al mercato della gilda." },
 ] as const;
@@ -21,6 +21,11 @@ export const SEZIONI = [
 export function sezione(href: string) {
   return SEZIONI.find((s) => s.href === href)!;
 }
+
+// Tesori condivisi: aggiorna le quantità o aggiungi nuovi oggetti e pubblica.
+export const TESORI_GILDA = [
+  { nome: "Monete d’oro", quantita: 200, icona: "🪙" },
+];
 
 // Bottega del Mercante.
 // Per mostrarla sul sito e nei menu: metti visibile: true e pubblica.

@@ -53,7 +53,7 @@ Dopo circa **1 minuto** il contenuto è online.
   - `*corsivo*`  →  *corsivo*
   - righe che iniziano con `-` → elenco puntato
   - lascia una **riga vuota** tra un paragrafo e l'altro
-- Mercante e Sede non si aggiornano con questo metodo: servono modifiche al codice,
+- Mercante e Gilda non si aggiornano con questo metodo: servono modifiche al codice,
   chiedi quando ti serve.
 
 ---

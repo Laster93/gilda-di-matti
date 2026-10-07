@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import { sezione } from "@/config";
+import { sezione, TESORI_GILDA } from "@/config";
 
 const SEZ = sezione("/planimetria");
 
@@ -37,6 +37,25 @@ export default function PlanimetriaPage() {
         </p>
         <div className="w-16 h-px bg-amber-700" />
       </div>
+
+      <section aria-labelledby="tesori-gilda" className="rounded-lg border border-amber-900 bg-stone-900 p-6 flex flex-col gap-5">
+        <h2 id="tesori-gilda" className="font-cinzel text-2xl font-bold text-amber-400">
+          Tesori della Gilda
+        </h2>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {TESORI_GILDA.map((tesoro) => (
+            <li key={tesoro.nome} className="flex items-center gap-4">
+              <span aria-hidden="true" className="text-3xl">{tesoro.icona}</span>
+              <div className="flex flex-col gap-1">
+                <span className="font-cinzel text-3xl font-bold text-amber-400">
+                  {tesoro.quantita.toLocaleString("it-IT")}
+                </span>
+                <span className="font-crimson text-lg text-stone-300">{tesoro.nome}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
 
       {/* Selettore vista */}
       <div className="flex gap-2">
