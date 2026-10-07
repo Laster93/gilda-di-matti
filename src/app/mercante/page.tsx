@@ -1,9 +1,12 @@
 import MercanteShop from "@/components/MercanteShop";
 import { MERCANTE, sezione } from "@/config";
+import { notFound } from "next/navigation";
 
 const SEZ = sezione("/mercante");
 
 export default function MercantePage() {
+  if (!MERCANTE.visibile) notFound();
+
   // Bottega chiusa: si mostra solo l'avviso, la merce resta nascosta.
   // Per riaprire: in src/config.ts metti  chiuso: false
   if (MERCANTE.chiuso) {

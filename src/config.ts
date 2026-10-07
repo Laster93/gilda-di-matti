@@ -23,8 +23,14 @@ export function sezione(href: string) {
 }
 
 // Bottega del Mercante.
+// Per mostrarla sul sito e nei menu: metti visibile: true e pubblica.
 // Per RIAPRIRLA: metti  chiuso: false  e pubblica. L'avviso sparisce da solo.
 export const MERCANTE = {
+  visibile: false,
   chiuso: true,
   riapertura: "Settembre",
 }
+
+export const SEZIONI_VISIBILI = SEZIONI.filter(
+  (s) => s.href !== "/mercante" || MERCANTE.visibile,
+);

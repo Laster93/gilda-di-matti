@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { GILDA, SEZIONI } from "@/config";
+import { GILDA, SEZIONI_VISIBILI } from "@/config";
 
 export default function Navbar() {
   return (
@@ -9,7 +9,7 @@ export default function Navbar() {
           {GILDA.nome}
         </Link>
         <nav className="flex flex-wrap justify-center gap-1 sm:ml-auto">
-          {SEZIONI.map((s) => (
+          {SEZIONI_VISIBILI.map((s) => (
             <Link
               key={s.href}
               href={s.href}

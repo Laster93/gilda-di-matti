@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { GILDA, MERCANTE, SEZIONI } from "@/config";
+import { GILDA, MERCANTE, SEZIONI_VISIBILI } from "@/config";
 
 // Titoli e icone arrivano da SEZIONI in config.ts: il Mercante e' l'unica
 // eccezione, perche' quando e' chiuso mostra l'avviso delle ferie.
-const sezioni = SEZIONI.map((s) =>
+const sezioni = SEZIONI_VISIBILI.map((s) =>
   s.href === "/mercante" && MERCANTE.chiuso
     ? {
         ...s,

@@ -1,12 +1,12 @@
 ---
-nome: "Tagliateste"
+nome: "Borin Mozzacape"
 classe: "Barbaro"
 livello: 5
 razza: "Nano"
 ruolo: "Membro Gilda"
 allineamento: ""
 divinita: ""
-stato: "Nuovo"
+stato: "Disperso"
 monete: ""
 giocatore: "Rey"
 immagine: "/membri/tagliateste.jpeg"

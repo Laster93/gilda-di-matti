@@ -58,6 +58,10 @@ Dopo circa **1 minuto** il contenuto è online.
 
 ---
 
+## Mercante nascosto
+
+Il Mercante è conservato ma nascosto dalla home e dal menu; anche il suo indirizzo diretto mostra una pagina non trovata. Per renderlo nuovamente visibile, imposta `visibile: true` nella configurazione `MERCANTE` in `src/config.ts`. Per aprire anche la bottega, imposta `chiuso: false`, poi pubblica.
+
 ## Archivio (documenti PDF) — funziona da solo
 
 Trascina il PDF nella sottocartella giusta dentro `public/documenti/` e fai `pubblica.bat`:

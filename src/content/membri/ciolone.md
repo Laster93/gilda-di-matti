@@ -1,5 +1,5 @@
 ---
-nome: "Ciolone"
+nome: "Ciolon"
 classe: "Paladino"
 livello: 3
 razza: "Goliath"
