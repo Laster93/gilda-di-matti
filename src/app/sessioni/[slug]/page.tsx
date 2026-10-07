@@ -1,4 +1,4 @@
-import { getSessione, getSessioni } from "@/lib/sessioni";
+import { getSessione, getSessioni, isExtra } from "@/lib/sessioni";
 import MasterNotes from "@/components/MasterNotes";
 import Markdown from "@/components/Markdown";
 import Link from "next/link";
@@ -17,7 +17,7 @@ export default async function SessionePage({
   const sessione = getSessione(slug);
   if (!sessione) notFound();
 
-  const tutte = getSessioni();
+  const tutte = getSessioni().filter((s) => isExtra(s) === isExtra(sessione));
   const idx = tutte.findIndex((s) => s.slug === slug);
   const precedente = idx > 0 ? tutte[idx - 1] : null;
   const successiva = idx >= 0 && idx < tutte.length - 1 ? tutte[idx + 1] : null;

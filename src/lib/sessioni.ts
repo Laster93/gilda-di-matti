@@ -35,6 +35,10 @@ export function getSessioni(): Sessione[] {
   return files.map(parse).sort((a, b) => a.atto - b.atto);
 }
 
+export function isExtra(sessione: Sessione): boolean {
+  return sessione.slug.startsWith("sessione-extra-");
+}
+
 export function getSessione(slug: string): Sessione | null {
   const file = path.join(dir, `${slug}.md`);
   if (!fs.existsSync(file)) return null;

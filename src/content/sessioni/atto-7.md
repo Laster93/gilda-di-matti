@@ -1,7 +1,7 @@
 ---
 titolo: "Un amaro ritorno"
-atto: 8
-etichetta: "Atto 8"
+atto: 7
+etichetta: "Atto 7"
 data: "02/10/2026"
 ---
 **Facendo ritorno alla taverna**, il gruppo ha fatto il punto della situazione con **Tilda**, 

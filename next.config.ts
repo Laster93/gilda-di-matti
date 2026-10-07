@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      { source: "/sessioni/atto-8", destination: "/sessioni/atto-7", permanent: true },
+    ];
+  },
   // I PDF dell'Archivio vengono serviti come file statici da /public e non
   // servono dentro le funzioni del sito: la pagina Archivio legge la cartella
   // solo durante il build, per costruire l'elenco.

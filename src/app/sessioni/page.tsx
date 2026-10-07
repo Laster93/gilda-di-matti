@@ -1,11 +1,15 @@
 import Link from "next/link";
-import { getSessioni } from "@/lib/sessioni";
+import { getSessioni, isExtra } from "@/lib/sessioni";
 import { sezione } from "@/config";
 
 const SEZ = sezione("/sessioni");
 
 export default function SessioniPage() {
   const sessioni = getSessioni();
+  const gruppi = [
+    { titolo: "La notte dell’Eclissi", sessioni: sessioni.filter((s) => !isExtra(s)) },
+    { titolo: "Extra", sessioni: sessioni.filter(isExtra) },
+  ];
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-16 flex flex-col gap-10">
@@ -19,8 +23,12 @@ export default function SessioniPage() {
         <div className="w-16 h-px bg-amber-700" />
       </div>
 
-      <div className="flex flex-col gap-4">
-        {sessioni.map((s) => (
+      {gruppi.map((gruppo) => (
+      <section key={gruppo.titolo} className="flex flex-col gap-4">
+        <h2 className="font-cinzel text-2xl font-bold text-amber-500 tracking-widest">
+          {gruppo.titolo}
+        </h2>
+        {gruppo.sessioni.map((s) => (
           <Link
             key={s.slug}
             href={`/sessioni/${s.slug}`}
@@ -34,15 +42,16 @@ export default function SessioniPage() {
                 <span className="font-crimson text-sm text-stone-500">{s.data}</span>
               )}
             </div>
-            <h2 className="font-cinzel text-xl font-bold text-stone-100 group-hover:text-amber-300 transition-colors">
+            <h3 className="font-cinzel text-xl font-bold text-stone-100 group-hover:text-amber-300 transition-colors">
               {s.titolo}
-            </h2>
+            </h3>
             <p className="font-crimson text-stone-400 leading-relaxed line-clamp-2">
               {s.contenuto.slice(0, 180)}…
             </p>
           </Link>
         ))}
-      </div>
+      </section>
+      ))}
     </div>
   );
 }
