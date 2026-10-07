@@ -82,6 +82,8 @@ function Gruppo({
 
 export default function MembriPage() {
   const giocatori = getGiocatori();
+  const attivi = giocatori.filter((m) => m.stato === "Attivo");
+  const dispersi = giocatori.filter((m) => m.stato === "Disperso");
   const npc = getNPC();
 
   return (
@@ -97,9 +99,15 @@ export default function MembriPage() {
       </div>
 
       <Gruppo
-        titolo="Giocatori"
-        sottotitolo="Gli avventurieri della gilda"
-        membri={giocatori}
+        titolo="Attivi"
+        sottotitolo="Gli avventurieri in attività"
+        membri={attivi}
+      />
+
+      <Gruppo
+        titolo="Dispersi"
+        sottotitolo="Gli avventurieri di cui si sono perse le tracce"
+        membri={dispersi}
       />
 
       <Gruppo
