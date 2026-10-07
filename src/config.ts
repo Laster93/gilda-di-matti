@@ -24,7 +24,7 @@ export function sezione(href: string) {
 
 // Tesori condivisi: aggiorna le quantità o aggiungi nuovi oggetti e pubblica.
 export const TESORI_GILDA = [
-  { nome: "Monete d’oro", quantita: 200, icona: "🪙" },
+  { nome: "Monete d’oro", quantita: 200 },
 ];
 
 // Bottega del Mercante.

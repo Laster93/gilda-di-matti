@@ -45,7 +45,6 @@ export default function PlanimetriaPage() {
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {TESORI_GILDA.map((tesoro) => (
             <li key={tesoro.nome} className="flex items-center gap-4">
-              <span aria-hidden="true" className="text-3xl">{tesoro.icona}</span>
               <div className="flex flex-col gap-1">
                 <span className="font-cinzel text-3xl font-bold text-amber-400">
                   {tesoro.quantita.toLocaleString("it-IT")}
