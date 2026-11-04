@@ -12,5 +12,5 @@ scoprendo tuttavia la sua pericolosa natura di "vampiro energetico", il cui orga
 Il sovrano rianimato ha subito accusato la regina **Drinala** e **Victor Noxis** di aver orchestrato il colpo di stato e la sua prigionia. 
 Scortando il debole monarca lungo il corridoio Ovest e risalendo la scalinata d'emergenza, il gruppo è riemerso da una botola all'esterno delle mura del castello
 per far ritorno alla taverna. 
-Purtroppo, durante la loro assenza, la taverna è stata attaccata dai mostri fuggiti dal laboratorio e durante gli scontri, purtroppo Patricia ha perso la vita.  
+Durante la loro assenza, la taverna è stata attaccata dai mostri fuggiti dal laboratorio e durante gli scontri Patricia ha perso la vita.  
 
