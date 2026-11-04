@@ -4,7 +4,7 @@ import { useState } from "react";
 
 type Oggetto = {
   nome: string;
-  quantita: number;
+  quantita?: number;
   descrizione: string;
   flavour?: string;
   prezzo: string;
@@ -283,7 +283,55 @@ function IllScudo() {
   );
 }
 
+function IllBacchetta() {
+  return (
+    <svg viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" aria-hidden="true">
+      <circle cx="72" cy="28" r="21" stroke="#b8863b" strokeDasharray="3 5" opacity="0.5" />
+      <circle cx="72" cy="28" r="15" fill="#60a5fa" opacity="0.15" />
+      <path d="M24 101 L66 36" stroke="#3b271e" strokeWidth="9" strokeLinecap="round" />
+      <path d="M25 98 L67 34" stroke="#946342" strokeWidth="5" strokeLinecap="round" />
+      <path d="M26 86 L33 91 M31 78 L38 83 M36 70 L43 75" stroke="#d4ac63" strokeWidth="3" />
+      <path d="M60 42 L69 47 L75 33 L65 27 Z" fill="#c99743" />
+      <path d="M64 28 L72 13 L81 26 L73 37 Z" fill="#60a5fa" stroke="#d8efff" strokeWidth="1.5" />
+      <path d="M72 13 L72 29 L81 26 M64 28 L72 29 L73 37" stroke="#bfdbfe" />
+      <path d="M88 11 V19 M84 15 H92 M46 22 V30 M42 26 H50" stroke="#c99743" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IllRampino() {
+  return (
+    <svg viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" aria-hidden="true">
+      <path d="M50 74 V29 M50 36 C24 36 19 50 24 64 L33 54 M50 36 C76 36 81 50 76 64 L67 54" stroke="#475569" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M49 70 V30 M49 38 C29 37 23 48 25 56 M52 38 C72 37 77 48 75 56" stroke="#cbd5e1" strokeWidth="2" />
+      <circle cx="50" cy="80" r="7" stroke="#64748b" strokeWidth="4" />
+      <path d="M50 88 C50 101 28 91 29 104 C30 115 76 113 73 101 C71 91 58 97 60 105" stroke="#a67845" strokeWidth="5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IllPozioneFuoco() {
+  return (
+    <svg viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" aria-hidden="true">
+      <path d="M40 25 H60 V48 C83 64 83 100 64 107 H36 C17 100 17 64 40 48 Z" fill="#f59e0b" stroke="#92400e" strokeWidth="3" />
+      <path d="M30 72 Q50 65 70 72 V91 Q69 101 60 101 H40 Q31 100 30 91 Z" fill="#c2410c" />
+      <rect x="39" y="17" width="22" height="13" rx="3" fill="#785339" />
+      <path d="M50 55 C60 67 54 72 60 75 C70 89 53 99 43 92 C29 83 44 76 42 68 C49 71 51 65 50 55 Z" fill="#fde68a" />
+      <path d="M36 53 Q27 64 27 74" stroke="#fff7ed" strokeWidth="4" strokeLinecap="round" opacity="0.65" />
+    </svg>
+  );
+}
+
 const illustrazioni: Record<string, React.ReactNode> = {
+  mantello: <span aria-hidden="true" className="flex h-full w-full items-center justify-center text-4xl">🧥</span>,
+  armatura: <span aria-hidden="true" className="flex h-full w-full items-center justify-center text-4xl">🛡️</span>,
+  guanti: <span aria-hidden="true" className="flex h-full w-full items-center justify-center text-4xl">🧤</span>,
+  amuleto: <span aria-hidden="true" className="flex h-full w-full items-center justify-center text-4xl">💎</span>,
+  anello: <span aria-hidden="true" className="flex h-full w-full items-center justify-center text-4xl">💍</span>,
+  piccone: <span aria-hidden="true" className="flex h-full w-full items-center justify-center text-4xl">⛏️</span>,
+  bacchetta: <IllBacchetta />,
+  rampino: <IllRampino />,
+  pozione_fuoco: <IllPozioneFuoco />,
   pozione_small: <IllPozioneSmall />,
   pozione_media: <IllPozioneMedia />,
   unguento: <IllUnguento />,
@@ -307,42 +355,54 @@ type Categoria = { titolo: string; emoji: string; oggetti: Oggetto[] };
 
 const catalogo: Categoria[] = [
   {
-    titolo: "Consumabili",
-    emoji: "🧪",
+    titolo: "Armature",
+    emoji: "🛡️",
     oggetti: [
-      { nome: "Pozione di Guarigione", quantita: 10, descrizione: "Bere questa pozione ripristina 2d4+2 punti ferita.", flavour: undefined, prezzo: "50 mo", categoria: "Consumabili", illKey: "pozione_small" },
-      { nome: "Pozione di Guarigione Superiore", quantita: 5, descrizione: "Bere questa pozione ripristina 4d4+4 punti ferita.", flavour: undefined, prezzo: "100 mo", categoria: "Consumabili", illKey: "pozione_media" },
-      { nome: "Unguento Velenoso", quantita: 2, descrizione: "Applicato su un'arma da taglio o perforante, per 3 turni aggiunge 1d4 danni da veleno ai colpi andati a segno. Il bersaglio deve superare un tiro salvezza su COS cd 12 o subire la condizione Avvelenato fino alla fine del suo prossimo turno.", flavour: undefined, prezzo: "100 mo", categoria: "Consumabili", illKey: "unguento" },
-      { nome: "Pugnali da Lancio", quantita: 10, descrizione: "Pugnali bilanciati per il lancio. Danno 1d4 perforante, gittata 6/18m. Proprietà: Accurata, Leggera, da Lancio.", flavour: undefined, prezzo: "2 mo cad.", categoria: "Consumabili", illKey: "pugnali" },
+      { nome: "Elmo di ossidiana", descrizione: "+1 alla CA e +1 al tiro per colpire.", prezzo: "200 mo", categoria: "Armature", illKey: "elmo" },
+      { nome: "Mantello della resistenza agli incantesimi", descrizione: "Conferisce vantaggio ai tiri salvezza contro gli incantesimi.", prezzo: "500 mo", categoria: "Armature", illKey: "mantello" },
+      { nome: "Mantello della pelle di pietra", descrizione: "Immunità ai malus velenosi e resistenza al veleno.", prezzo: "150 mo", categoria: "Armature", illKey: "mantello" },
+      { nome: "Armatura scaglie di pietra", descrizione: "Armatura pesante. CA 15.", prezzo: "100 mo", categoria: "Armature", illKey: "armatura" },
+      { nome: "Guanti del reame della formica montagne", descrizione: "Capacità di sollevare fino a 250 kg di roccia o materiale roccioso grezzo. +1 punto bonus Forza.", prezzo: "225 mo", categoria: "Armature", illKey: "guanti" },
     ],
   },
   {
-    titolo: "Pergamene",
-    emoji: "📜",
+    titolo: "Gioielli",
+    emoji: "💎",
     oggetti: [
-      { nome: "Pergamena della Rinascita", quantita: 1, descrizione: "Incantesimo Rinascita (9° livello). Riporta in vita una creatura morta entro 10 giorni. La creatura torna con 1 PF e perde 1 punto al massimo dei PF permanentemente.", flavour: undefined, prezzo: "500 mo", categoria: "Pergamene", illKey: "scroll_gold" },
-      { nome: "Pergamena — Camuffare Se Stesso", quantita: 2, descrizione: "Incantesimo Camuffare Se Stesso (1° livello). Altera magicamente il tuo aspetto fisico fino a 30cm in più o in meno. Dura 1 ora o finché non ti concentri.", flavour: undefined, prezzo: "30 mo", categoria: "Pergamene", illKey: "scroll_blue" },
-      { nome: "Pergamena — Parlare con gli Animali", quantita: 2, descrizione: "Incantesimo Parlare con gli Animali (1° livello). Per 10 minuti puoi comprendere e comunicare verbalmente con le bestie. Le bestie hanno intelligenza limitata e possono non sapere rispondere.", flavour: undefined, prezzo: "30 mo", categoria: "Pergamene", illKey: "scroll_green" },
-      { nome: "Pergamena — Pelle Coriacea", quantita: 1, descrizione: "Incantesimo Pelle Coriacea (2° livello). La CA del bersaglio toccato diventa 13 + modificatore DES. Dura 8 ore, richiede concentrazione.", flavour: undefined, prezzo: "50 mo", categoria: "Pergamene", illKey: "scroll_brown" },
-      { nome: "Pergamena — Movimenti del Ragno", quantita: 1, descrizione: "Incantesimo Movimenti del Ragno (2° livello). Il bersaglio ottiene velocità di scalata pari alla velocità di movimento e può scalare superfici verticali e soffitti a mani libere. Dura 1 ora, richiede concentrazione.", flavour: undefined, prezzo: "50 mo", categoria: "Pergamene", illKey: "scroll_spider" },
-      { nome: "Pergamena — Arma Elementale", quantita: 1, descrizione: "Incantesimo Arma Elementale (3° livello). Un'arma non magica diventa magica. Scegli un tipo di danno tra Acido, Freddo, Fulmine, Fuoco o Tuono: l'arma aggiunge 1d4 di quel danno ai colpi andati a segno. Dura 1 ora, richiede concentrazione.", flavour: undefined, prezzo: "100 mo", categoria: "Pergamene", illKey: "scroll_fire" },
+      { nome: "Amuleto della Salute", descrizione: "Il punteggio di Costituzione è pari a 19.", prezzo: "400 mo", categoria: "Gioielli", illKey: "amuleto" },
+      { nome: "Amuleto Anti-Individuazione", descrizione: "Chi lo indossa non può essere bersaglio di magie di divinazione né essere percepito attraverso sensori o magie.", prezzo: "330 mo", categoria: "Gioielli", illKey: "amuleto" },
+      { nome: "Anello di Protezione", descrizione: "+1 alla CA e ai tiri salvezza.", prezzo: "170 mo", categoria: "Gioielli", illKey: "anello" },
     ],
   },
   {
     titolo: "Armi",
     emoji: "⚔️",
     oggetti: [
-      { nome: "Bastone delle Rose", quantita: 1, descrizione: "Bastone magico utilizzabile come catalizzatore arcano. Aggiunge 1d4 danni perforanti sia agli incantesimi che ai colpi melee. Richiede attunement da parte di un incantatore.", flavour: "Un bastone ricavato da un arbusto di rose selvatiche. Sulla punta, numerose spine acuminate resistono a qualsiasi tentativo di rimozione.", prezzo: "50 mo", categoria: "Armi", illKey: "bastone" },
-      { nome: "Ascia Rombo della Foresta", quantita: 1, descrizione: "Ascia bipenne magica. Quando colpisce un nemico, questi deve superare un tiro salvezza su COS cd 14 o essere respinto di 3 metri.", flavour: "Il manico è intrecciato di nocciolo vivo. Sulla lama è incastonato uno zaffiro grezzo che vibra ad ogni colpo.", prezzo: "75 mo", categoria: "Armi", illKey: "ascia" },
-      { nome: "Spada Elfica Intarsiata", quantita: 1, descrizione: "Spada lunga magica. Si illumina di luce azzurra (luminosità intensa 6m, fioca ulteriori 6m) quando una creatura dalle intenzioni ostili si trova entro 30 metri.", flavour: "Una spada di fattura elfica, rifinita con intarsi d'argento. Il bagliore azzurro che emette calma stranamente chi la osserva.", prezzo: "65 mo", categoria: "Armi", illKey: "spada" },
+      { nome: "Piccone da guerra +2", descrizione: "+2 al tiro per colpire e +2 ai danni.", prezzo: "200 mo", categoria: "Armi", illKey: "piccone" },
+      {
+        nome: "Bacchetta di individuazione dei nemici",
+        descrizione: "Questa bacchetta ha 7 cariche. Mentre la impugna, il personaggio può effettuare un’azione di magia per consumare 1 carica. Per 1 minuto conosce la direzione della creatura a lui ostile più vicina situata entro 18 metri da sé, ma non la sua distanza precisa. La bacchetta può percepire creature ostili invisibili, eteree, camuffate o nascoste, oltre a quelle in piena vista. L’effetto termina se il personaggio smette di impugnare la bacchetta.\n\nRipristinare le cariche: all’alba di ogni giorno, la bacchetta recupera 1d6 + 1 cariche consumate. Se il personaggio consuma l’ultima carica, deve tirare 1d20: se ottiene 1, la bacchetta va in cenere ed è distrutta.",
+        prezzo: "340 mo",
+        categoria: "Armi",
+        illKey: "bacchetta",
+      },
     ],
   },
   {
-    titolo: "Armature",
-    emoji: "🛡️",
+    titolo: "Equipaggiamento",
+    emoji: "🪢",
     oggetti: [
-      { nome: "Elmo dell'Antica Quercia", quantita: 1, descrizione: "Elmo leggero magico. Mentre indossi questo elmo sei immune ai danni Psichici. Richiede attunement.", flavour: "Un elmo intagliato nel legno di una quercia secolare, ornato da piccole pietre viola. Pesa sorprendentemente poco.", prezzo: "90 mo", categoria: "Armature", illKey: "elmo" },
-      { nome: "Scudo dello Specchio Riflettente", quantita: 1, descrizione: "Scudo magico. Come reazione, puoi tentare di riflettere un incantesimo che richiede un tiro per colpire: supera una prova di Abilità DES cd 15. Se riesci, l'incantesimo si ritorce contro il lanciatore usando il suo stesso tiro per colpire. Richiede attunement.", flavour: undefined, prezzo: "90 mo", categoria: "Armature", illKey: "scudo" },
+      { nome: "Rampino", descrizione: "Rampino da fissare a una corda per agganciare appigli durante le scalate. Corda non inclusa.", prezzo: "2 mo", categoria: "Equipaggiamento", illKey: "rampino" },
+    ],
+  },
+  {
+    titolo: "Consumabili",
+    emoji: "🧪",
+    oggetti: [
+      { nome: "Pozione di Guarigione", descrizione: "Bere questa pozione ripristina 2d4 + 2 punti ferita.", prezzo: "50 mo", categoria: "Consumabili", illKey: "pozione_small" },
+      { nome: "Pozione di Guarigione maggiore", descrizione: "Bere questa pozione ripristina 4d4 + 4 punti ferita.", prezzo: "100 mo", categoria: "Consumabili", illKey: "pozione_media" },
+      { nome: "Pozione di Resistenza al fuoco", descrizione: "Bere questa pozione conferisce resistenza ai danni da fuoco per 1 ora.", prezzo: "150 mo", categoria: "Consumabili", illKey: "pozione_fuoco" },
+      { nome: "Pozioni su richiesta", descrizione: "Varie pozioni su richiesta :)", prezzo: "Su richiesta", categoria: "Consumabili", illKey: "pozione_small" },
     ],
   },
 ];
@@ -416,12 +476,13 @@ function Modal({ oggetto, onClose }: { oggetto: Oggetto; onClose: () => void }) 
       onClick={onClose}
     >
       <div
-        className="relative max-w-lg w-full rounded-xl shadow-2xl overflow-hidden"
+        className="relative max-w-lg w-full max-h-[85dvh] rounded-xl shadow-2xl overflow-y-auto"
         style={{ background: "linear-gradient(135deg, #f5e6c8 0%, #ede0b0 50%, #f0d890 100%)" }}
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
+          aria-label="Chiudi dettagli"
           className="absolute top-4 right-4 z-10 text-stone-600 hover:text-stone-900 text-2xl leading-none font-bold"
         >
           ×
@@ -437,7 +498,7 @@ function Modal({ oggetto, onClose }: { oggetto: Oggetto; onClose: () => void }) 
           <div className="flex flex-col gap-3 p-6 border-l border-amber-300">
             <div className="flex items-start justify-between gap-3 flex-wrap">
               <h3 className="font-cinzel font-bold text-lg text-amber-900 leading-tight">{oggetto.nome}</h3>
-              {oggetto.quantita > 1 && (
+              {oggetto.quantita !== undefined && oggetto.quantita > 1 && (
                 <span className="font-crimson text-xs text-stone-600 border border-stone-400 px-1.5 py-0.5 rounded shrink-0">
                   ×{oggetto.quantita} disponibili
                 </span>
@@ -445,7 +506,7 @@ function Modal({ oggetto, onClose }: { oggetto: Oggetto; onClose: () => void }) 
             </div>
             <p className="font-cinzel text-amber-700 font-bold text-base">{oggetto.prezzo}</p>
             <div className="w-12 h-px bg-amber-600 opacity-50" />
-            <p className="font-crimson text-stone-800 leading-relaxed text-base">{oggetto.descrizione}</p>
+            <p className="font-crimson text-stone-800 leading-relaxed text-base whitespace-pre-line">{oggetto.descrizione}</p>
             {oggetto.flavour && (
               <p className="font-crimson text-stone-600 italic text-sm border-l-2 border-amber-600 pl-3 mt-1">
                 {oggetto.flavour}
@@ -467,11 +528,10 @@ export default function MercanteShop() {
     <>
       {/* Banner */}
       <div className="border border-amber-800 rounded-lg p-6 bg-stone-900 flex flex-col gap-2">
-        <p className="font-cinzel text-lg text-amber-400 font-bold">🌲 Mercante in arrivo — Specialità dalla Foresta</p>
+        <p className="font-cinzel text-lg text-amber-400 font-bold">🏔️ Mercante delle Montagne</p>
         <p className="font-crimson text-stone-300">
-          Disponibile dal <span className="text-amber-300 font-semibold">15 Giugno</span> al{" "}
-          <span className="text-amber-300 font-semibold">28 Giugno</span>.
-          Scorte limitate — chi prima arriva, meglio si arma.
+          Prepara il tuo equipaggiamento per la prossima sessione.
+          Scopri gli oggetti e consulta prezzi e dettagli.
         </p>
       </div>
 
@@ -497,7 +557,7 @@ export default function MercanteShop() {
                       <span className="font-cinzel text-sm font-bold text-amber-900 leading-tight line-clamp-2">{obj.nome}</span>
                       <div className="flex items-center gap-2">
                         <span className="font-crimson text-amber-700 text-sm font-semibold">{obj.prezzo}</span>
-                        {obj.quantita > 1 && (
+                        {obj.quantita !== undefined && obj.quantita > 1 && (
                           <span className="font-crimson text-stone-600 text-xs">×{obj.quantita}</span>
                         )}
                       </div>

@@ -58,9 +58,9 @@ Dopo circa **1 minuto** il contenuto è online.
 
 ---
 
-## Mercante nascosto
+## Mercante
 
-Il Mercante è conservato ma nascosto dalla home e dal menu; anche il suo indirizzo diretto mostra una pagina non trovata. Per renderlo nuovamente visibile, imposta `visibile: true` nella configurazione `MERCANTE` in `src/config.ts`. Per aprire anche la bottega, imposta `chiuso: false`, poi pubblica.
+Il Mercante è visibile nella home e nel menu e la bottega è aperta. Il catalogo si modifica in `src/components/MercanteShop.tsx`. Per nasconderlo anche all'indirizzo diretto, imposta `visibile: false` nella configurazione `MERCANTE` in `src/config.ts`. Per mostrare invece l'avviso di chiusura, mantieni `visibile: true` e imposta `chiuso: true`, poi pubblica.
 
 ## Archivio (documenti PDF) — funziona da solo
 

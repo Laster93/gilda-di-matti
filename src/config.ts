@@ -31,8 +31,8 @@ export const TESORI_GILDA = [
 // Per mostrarla sul sito e nei menu: metti visibile: true e pubblica.
 // Per RIAPRIRLA: metti  chiuso: false  e pubblica. L'avviso sparisce da solo.
 export const MERCANTE = {
-  visibile: false,
-  chiuso: true,
+  visibile: true,
+  chiuso: false,
   riapertura: "Settembre",
 }
 
