@@ -2,7 +2,7 @@
 titolo: "Un Amaro Ritorno"
 atto: 7 - seconda parte
 etichetta: "Atto 7 - seconda parte"
-data: ""
+data: "25/10/2026"
 ---
 
 Nel cuore della sala monumentale, il gruppo ha trovato la colonna di vetro in cui galleggia il corpo paralizzato del Re Goliath.
